@@ -1,0 +1,113 @@
+<!-- 
+L'exercice consiste à afficher la liste des stations Vélib par Adresses, 
+puis à afficher les détails d'une station au clic de l'utilisateur
+
+Exercice BONUS1 : Afficher la localisation de la station Vélib sélectionnée sur une map Google
+Exercice BONUS2 : Réaliser un moteur de recherche des stations par code postal
+
+(Fred Lossignol)
+-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velibeo</title>
+  <meta name="title" content="Vélibeo">
+  <meta name="description" content="Recherchez le nombre de vélos disponibles par station">
+  <meta name="author" content="Fred Lossignol">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+ <body>
+    <div class="content-secondary">
+      <header class="header-primary">
+        <a href="/" class="header-primary__logo">
+          <img src="http://www.presselite.com/iphone/velib/images/logo.jpg" alt="Velibeo">
+        </a>
+        <div style="text-align: center; color: #fff; background: #1F1F29; padding: 0.3em; margin: 0 auto 18px" class="header-primary__module">
+            <span data-title="">Velib'Eo</span>
+        </div>     
+        <nav id="nav-primary" class="header-primary__navigation nav-primary">
+            <ul class="nav-primary__items">
+                <!--  Afficher ici avec JS :  La liste des Stations Velib dans des balises <li> 
+                (Requête à l'API JC Decaux qui retourne la liste de toutes les stations)-->
+            </ul>
+        </nav>
+      </header>
+    </div>
+
+    <main class="content-primary">
+      <div class="content-primary__container">
+          <h1>
+    <!--         Aficher ici avec JS :  Nom de la station sélectionnée  -->
+          </h1>
+
+    <hr class="separator">
+
+    <article class="article-single content--narrow">
+      <header class="article-single__header">
+          
+          <p class="article-single__excerpt velibDispo">
+             
+              <strong>
+                  Cliquez sur une station pour avoir les infos !
+                  <!--         Aficher ici : Il reste x vélibs disponibles à cette station  -->
+              </strong>
+             
+          </p>
+
+      </header>
+     
+      <div class="article-single__body hide infosVelib">
+          
+          <h2>Adresse</h2>
+       
+       
+        <p class="address">
+          <!--   Afficher l'adresse de la station velib --> 
+        </p>
+
+        <h2>Nombre de places disponibles</h2>
+
+        
+        <p class="bikeStands">
+           <!--   Afficher ici : le nombre de places total -->   
+        </p>
+
+
+    <hr class="separator">
+
+    <h2>Localisation (exercice BONUS1)</h2>
+    <p><small><em>(Nous pouvons positionner la station sur une map Google)</em></small></p>
+
+    <p class="localisation">
+         <strong>   
+          <!--   Afficher ici : Les coordonnées et la localisation sur la map google -->   
+         </strong>   
+    </p>
+
+
+    <!--  Exercice Bonus1 : Afficher les stations sur une map Google -->
+    <div id="map"></div>
+
+
+    </div>
+    </article>
+      </div>
+    </main>
+
+
+<!--  On charge jQuery et nos 2 fichiers JS getters.js et main.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src='js/getters.js'></script>
+<script src='js/main.js'></script>
+
+
+<!--  Pour l'exercice Bonus1, il faut charger l'API Google Map -->
+<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>-->
+
+
+</body>
+</html>
